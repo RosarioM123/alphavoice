@@ -12,11 +12,11 @@ from pathlib import Path
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-TOOL_NAMES = {"signal_scan", "mispricing_check", "news_microstructure"}
+TOOL_NAMES = {"signal_scan", "mispricing_check", "news_microstructure", "market_brief"}
 E2E_PORT = 8123
 
 
-def test_server_registers_exact_three_tools():
+def test_server_registers_exact_four_tools():
     import mcp_server
 
     async def _list():
@@ -96,7 +96,7 @@ def _client_round_trip(url: str):
                     tools = await session.list_tools()
                     names = {t.name for t in tools.tools}
                     results = {}
-                    for name in ("signal_scan", "mispricing_check", "news_microstructure"):
+                    for name in TOOL_NAMES:
                         res = await session.call_tool(name, {"query": "e2e check"})
                         text = res.content[0].text
                         results[name] = json.loads(text)
@@ -105,7 +105,7 @@ def _client_round_trip(url: str):
     return asyncio.run(_run())
 
 
-def test_e2e_list_tools_shows_all_three(live_server):
+def test_e2e_list_tools_shows_all_four(live_server):
     names, _ = _client_round_trip(live_server)
     assert names == TOOL_NAMES
 
