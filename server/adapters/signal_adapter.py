@@ -15,13 +15,14 @@ signals. The numbers are simulated; the engine code path is real.
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-SIGNAL_ROOT = Path.home() / "workspace" / "signal-build"
+SIGNAL_ROOT = Path(os.environ.get("SIGNAL_ROOT", Path.home() / "workspace" / "signal-build"))
 if str(SIGNAL_ROOT) not in sys.path:
     sys.path.insert(0, str(SIGNAL_ROOT))
 
