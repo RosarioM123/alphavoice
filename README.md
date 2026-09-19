@@ -8,11 +8,12 @@ AlphaVoice is a self-hosted MCP server (spec 2025-11-25, Streamable HTTP) that t
 
 Utterance becomes an Alexa+ agent call, the agent selects tools over MCP schemas, the engine runs, a speakable summary comes back with the detail payload one question away, and the summary is spoken.
 
-## Three tools
+## Four tools
 
 - **signal_scan**: scans six signal families and combines them with a ridge combiner to rank trade ideas.
 - **mispricing_check**: prices full-book VWAP across Polymarket and Kalshi, sizes positions with fractional Kelly, paper only. It never executes.
 - **news_microstructure**: fits a Hawkes process to news-to-price impact. It reports alpha_10 (impact magnitude), half-life ln(2)/beta, and whether the regime is sub-critical or explosive.
+- **market_brief**: the composed multi-tool path. Runs all three tools on the synthetic fixtures and synthesizes one spoken verdict, the centerpiece of the demo.
 
 ## Four design decisions
 
@@ -67,6 +68,7 @@ alphavoice/
     demo-script.md       60-second demo script
     friction-log.md      builder friction log (template)
     product-feedback.md  DRAFT feedback on the MCP SDK
+  evals/               tool-routing eval harness (questions, router, report)
   server/              the MCP server and tool implementations
   tests/               engine and contract tests
   web/                 browser simulation of the voice experience
@@ -74,7 +76,7 @@ alphavoice/
 
 ## What is new in the hackathon window
 
-The quant engines pre-date this project: the signal families, the ridge combiner, the mispricing math, and the Hawkes fitting already existed. Built during the hackathon window: the MCP server itself, the three tool schemas, the voice interaction design, the summary/detail contract, the speech rules, and the demo. The code in `server/`, the tests in `tests/`, and the simulation in `web/` are the evidence.
+The quant engines pre-date this project: the signal families, the ridge combiner, the mispricing math, and the Hawkes fitting already existed. Built during the hackathon window: the MCP server itself, the four tool schemas (including the composed market_brief path), the voice interaction design, the summary/detail contract, the speech rules, the routing eval harness, and the demo. The code in `server/`, the tests in `tests/`, the evals in `evals/`, and the simulation in `web/` are the evidence.
 
 ## Honesty notes
 
