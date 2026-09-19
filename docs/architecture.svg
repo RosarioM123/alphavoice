@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="430" viewBox="0 0 1240 430" font-family="Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="1240" height="430" rx="14" fill="#f7f9fc"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/></marker></defs>
+<rect x="16" y="24" width="130" height="216" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+<text x="81.0" y="54" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">Voice</text>
+<text x="81.0" y="80" text-anchor="middle" font-size="12.5" fill="#475569">spoken</text>
+<text x="81.0" y="100" text-anchor="middle" font-size="12.5" fill="#475569">question</text>
+<rect x="186" y="24" width="180" height="216" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="2.5"/>
+<text x="276.0" y="54" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">Alexa+ agent</text>
+<text x="276.0" y="80" text-anchor="middle" font-size="12.5" fill="#475569">selects a tool from</text>
+<text x="276.0" y="100" text-anchor="middle" font-size="12.5" fill="#475569">the MCP schemas</text>
+<rect x="406" y="24" width="200" height="216" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2.5"/>
+<text x="506.0" y="54" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">MCP server</text>
+<text x="506.0" y="80" text-anchor="middle" font-size="12.5" fill="#475569">Streamable HTTP,</text>
+<text x="506.0" y="100" text-anchor="middle" font-size="12.5" fill="#475569">/mcp</text>
+<text x="506.0" y="120" text-anchor="middle" font-size="12.5" fill="#475569">MCP spec 2025-11-25</text>
+<rect x="646" y="24" width="200" height="216" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2.5"/>
+<text x="746.0" y="50" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">Typed tools</text>
+<rect x="656" y="66" width="180" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="746.0" y="83" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">signal_scan</text>
+<text x="746.0" y="99" text-anchor="middle" font-size="10.5" fill="#92400e">six signal families, ranked</text>
+<rect x="656" y="110" width="180" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="746.0" y="127" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">mispricing_check</text>
+<text x="746.0" y="143" text-anchor="middle" font-size="10.5" fill="#92400e">Polymarket/Kalshi VWAP, paper only</text>
+<rect x="656" y="154" width="180" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="746.0" y="171" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">news_microstructure</text>
+<text x="746.0" y="187" text-anchor="middle" font-size="10.5" fill="#92400e">Hawkes news-to-price impact</text>
+<rect x="656" y="198" width="180" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="746.0" y="215" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">market_brief</text>
+<text x="746.0" y="231" text-anchor="middle" font-size="10.5" fill="#92400e">composed: runs all three</text>
+<rect x="886" y="24" width="338" height="216" rx="10" fill="#ffffff" stroke="#0e7490" stroke-width="2.5"/>
+<text x="1055.0" y="50" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">Quant engines</text>
+<rect x="896" y="66" width="318" height="52" rx="6" fill="#ecfeff" stroke="#0e7490" stroke-width="1.2"/>
+<text x="1055.0" y="87" text-anchor="middle" font-size="13" font-weight="bold" fill="#155e75">SIGNAL</text>
+<text x="1055.0" y="105" text-anchor="middle" font-size="10.5" fill="#155e75">six signal families, ridge combiner</text>
+<rect x="896" y="124" width="318" height="52" rx="6" fill="#ecfeff" stroke="#0e7490" stroke-width="1.2"/>
+<text x="1055.0" y="145" text-anchor="middle" font-size="13" font-weight="bold" fill="#155e75">ODDS</text>
+<text x="1055.0" y="163" text-anchor="middle" font-size="10.5" fill="#155e75">full-book VWAP, fractional Kelly</text>
+<rect x="896" y="182" width="318" height="52" rx="6" fill="#ecfeff" stroke="#0e7490" stroke-width="1.2"/>
+<text x="1055.0" y="203" text-anchor="middle" font-size="13" font-weight="bold" fill="#155e75">Hawkes</text>
+<text x="1055.0" y="221" text-anchor="middle" font-size="10.5" fill="#155e75">alpha_10 impact, ln(2)/beta half-life</text>
+<line x1="146" y1="140" x2="186" y2="140" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="366" y1="140" x2="406" y2="140" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="606" y1="140" x2="646" y2="140" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="846" y1="140" x2="886" y2="140" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="166.0" y="118" text-anchor="middle" font-size="12" fill="#64748b">spoken question</text>
+<text x="386.0" y="118" text-anchor="middle" font-size="12" fill="#64748b">tool selection</text>
+<text x="626.0" y="118" text-anchor="middle" font-size="12" fill="#64748b">typed tool call</text>
+<text x="866.0" y="118" text-anchor="middle" font-size="12" fill="#64748b">adapter runs engine</text>
+<text x="620" y="382" text-anchor="middle" font-size="12" fill="#64748b">Every tool returns two things: a speakable summary and a detail payload one question away.</text>
+<text x="620" y="402" text-anchor="middle" font-size="12" fill="#64748b">Engines run on synthetic fixtures, labeled simulated. mispricing_check is paper only: no order paths, no execution code, no trading keys.</text>
+<line x1="1055" y1="240" x2="1055" y2="330" stroke="#334155" stroke-width="2"/>
+<line x1="1055" y1="330" x2="81" y2="330" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="81" y1="330" x2="81" y2="245" stroke="#334155" stroke-width="2"/>
+<text x="1055" y="318" text-anchor="end" font-size="12.5" fill="#334155">speakable summary + detail payload, honest numbers or silence</text>
+<text x="96" y="318" text-anchor="start" font-size="12.5" fill="#334155">spoken answer (TTS)</text>
+</svg>
