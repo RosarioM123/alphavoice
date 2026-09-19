@@ -55,7 +55,9 @@ def speak_number(value: float | int, *, floor_zero: bool = False) -> str:
     decimals = sig - 1 - exp
     rounded = round(a, decimals)
     if decimals >= 0:
-        text = f"{rounded:.{decimals}f}".rstrip("0").rstrip(".")
+        text = f"{rounded:.{decimals}f}"
+        if decimals > 0:
+            text = text.rstrip("0").rstrip(".")
     else:
         text = str(int(rounded))
     prefix = "minus " if neg else "about "
