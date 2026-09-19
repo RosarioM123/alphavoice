@@ -15,10 +15,11 @@ fixture (labeled simulated). Nothing is bought, sold, or sent anywhere.
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
-ODDS_ROOT = Path.home() / "workspace" / "odds-prediction-mispricing"
+ODDS_ROOT = Path(os.environ.get("ODDS_ROOT", Path.home() / "workspace" / "odds-prediction-mispricing"))
 if str(ODDS_ROOT) not in sys.path:
     sys.path.insert(0, str(ODDS_ROOT))
 
