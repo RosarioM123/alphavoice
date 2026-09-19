@@ -12,10 +12,15 @@ const MCP_URL = "http://localhost:8000/mcp";
 const PROTOCOL_VERSIONS = ["2025-11-25", "2025-06-18", "2024-11-05"];
 const CLIENT_INFO = { name: "alphavoice-web", version: "0.1.0" };
 const REQUEST_TIMEOUT_MS = 12000;
-const TOOL_NAMES = ["signal_scan", "mispricing_check", "news_microstructure"];
+const TOOL_NAMES = ["market_brief", "signal_scan", "mispricing_check", "news_microstructure"];
 
 /* Simulated routing table. Keyword based, labeled as simulated in the UI. */
 const ROUTES = [
+  {
+    tool: "market_brief",
+    keywords: ["morning brief", "brief", "full picture", "everything today", "all three", "roundup"],
+    topic: "the composed multi-tool morning brief",
+  },
   {
     tool: "news_microstructure",
     keywords: ["cpi", "inflation", "fed", "news", "print", "absorb", "absorbed", "absorption",
