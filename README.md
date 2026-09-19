@@ -23,6 +23,16 @@ Utterance becomes an Alexa+ agent call, the agent selects tools over MCP schemas
 
 ## Quickstart
 
+AlphaVoice wraps two existing quant engines, so clone them as siblings first:
+
+```bash
+mkdir -p ~/workspace
+git clone https://github.com/RosarioM123/signal-research-lab.git ~/workspace/signal-build
+git clone https://github.com/RosarioM123/odds-prediction-mispricing.git ~/workspace/odds-prediction-mispricing
+```
+
+(Or point `SIGNAL_ROOT` and `ODDS_ROOT` at wherever yours live.)
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
