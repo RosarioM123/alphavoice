@@ -106,6 +106,30 @@ Copy the block below for each new entry. Be concrete: what you tried, what faile
 - Workaround: tests pass a pre-configured `httpx2.AsyncClient(trust_env=False)` to `streamable_http_client`; the server subprocess gets a proxy-stripped env. Localhost traffic never needed the proxy.
 - Impact: ~20 minutes; not blocked.
 
+### 2026-09-18 - speak_number mangled values that round to trailing zeros
+
+- Context: building the composed `market_brief` verdict, which renders the Hawkes half-life through the shared speech-rules helper in `server/tools/contract.py`.
+- Tried: `speak_number(29.7)` for a half-life of 29.7 seconds.
+- Result: returned "about 3" instead of "about 30". The `.rstrip("0")` meant for decimal tails was also stripping integer zeros, so any value rounding to 30, 100, 250, etc. lost a digit. This would have corrupted the spoken brief ("about 3 seconds" for a 30-second half-life).
+- Workaround: fixed `speak_number` to strip trailing zeros only when a decimal point is present. All existing contract tests still pass; added regression coverage in `tests/test_compose.py` via the shared precision helpers.
+- Impact: ~20 minutes; not blocked. The bug lived in shared contract code, not just the new path.
+
+### 2026-09-18 - Eval keyword lists had to drop generic tokens to protect honest silence
+
+- Context: building the tool-routing eval (`evals/`), which scores routing on 15 questions including out-of-scope ones that must route to no tool.
+- Tried: first keyword lists included "today" and "news".
+- Result: they fire on nearly any phrasing ("what's the weather today" matched a tool), which would break the honest-silence cases the eval is supposed to prove.
+- Workaround: removed "today" and "news" from the eval router's keyword lists, and added "position" to `mispricing_check` so "my prediction-market position" routes without needing the literal phrase "paper position". Documented in the router docstring and the eval report notes.
+- Impact: not blocked. Deliberate difference from `web/app.js`: the web sim falls back to `signal_scan` on zero keyword hits, while the eval router returns the empty set. The demo narrative must not claim the two agree on out-of-scope questions.
+
+### 2026-09-18 - TTS: no headless browser in this environment, so no real playback test
+
+- Context: adding SpeechSynthesis read-aloud buttons and an auto-speak toggle to `web/`.
+- Tried: looked for chromium, google-chrome, firefox in PATH and /usr/bin.
+- Result: none present. The page was never loaded in a real browser, so observer-driven button rendering, voice selection, and actual utterance playback are unverified in practice.
+- Workaround: `node --check` passes on `web/tts.js`, plus a static review (every referenced id/class exists, observer guards against double-attachment, graceful degradation when `speechSynthesis` is missing). The user must click a speak button once during the demo recording to confirm audio works in their browser.
+- Impact: not blocked, but flag for demo prep. Related quirk: Chrome may silently block `speechSynthesis.speak()` without a prior user gesture, so the auto-speak toggle is only meaningful after the user has interacted with the page. Also, `app.js` already fakes a "Speaking..." ring glow on a timer; that timing was deliberately left untouched.
+
 (No entries yet. Append new incidents above this line using the template.)
 
 ## 2026-09-18, coordinator verification
