@@ -1,5 +1,9 @@
 # AlphaVoice
 
+[![CI](https://github.com/RosarioM123/alphavoice/actions/workflows/ci.yml/badge.svg)](https://github.com/RosarioM123/alphavoice/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+
 A translation layer between quant models and human conversation.
 
 AlphaVoice is a self-hosted MCP server (spec 2025-11-25, Streamable HTTP) that turns an Alexa+ agent into a quant research desk. Speak a market question, get a spoken answer with real numbers behind it.
@@ -7,6 +11,10 @@ AlphaVoice is a self-hosted MCP server (spec 2025-11-25, Streamable HTTP) that t
 ## Data flow
 
 Utterance becomes an Alexa+ agent call, the agent selects tools over MCP schemas, the engine runs, a speakable summary comes back with the detail payload one question away, and the summary is spoken.
+
+## Architecture
+
+![AlphaVoice architecture: voice to Alexa+ agent to MCP server to typed tools to quant engines, with a spoken answer returned](docs/architecture.svg)
 
 ## Four tools
 
@@ -65,6 +73,7 @@ alphavoice/
   README.md            this file
   LICENSE              license choice (see top-of-file note)
   docs/
+    architecture.svg   system diagram: voice to spoken answer
     demo-script.md       60-second demo script
     friction-log.md      builder friction log (template)
     product-feedback.md  DRAFT feedback on the MCP SDK
