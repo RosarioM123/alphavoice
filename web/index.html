@@ -37,6 +37,7 @@
   <section id="transcript" class="transcript" aria-live="polite" aria-label="Conversation transcript"></section>
 
   <div class="chips" role="group" aria-label="Suggested demo questions">
+    <button class="chip" type="button" data-q="Morning brief roundup: this morning's CPI print, anything mispriced, and today's signals">Morning brief: CPI print, mispricing, signals</button>
     <button class="chip" type="button" data-q="How fast did the market absorb this morning's CPI print?">How fast did the market absorb this morning's CPI print?</button>
     <button class="chip" type="button" data-q="Anything mispriced between Polymarket and Kalshi right now?">Anything mispriced between Polymarket and Kalshi right now?</button>
     <button class="chip" type="button" data-q="Any unusual momentum or mean-reversion signals today?">Any unusual momentum or mean-reversion signals today?</button>
@@ -52,11 +53,13 @@
         <line x1="12" y1="18" x2="12" y2="21"></line>
       </svg>
     </button>
+    <button id="autoplayBtn" class="autoplay" type="button" aria-pressed="false" title="Speak answers aloud automatically">Auto-speak: off</button>
   </form>
 
   <p class="footnote">Agent routing is simulated (keyword match) and labeled as such. Tool calls are real, over MCP Streamable HTTP at localhost:8000. Mispricing output is paper only: nothing here places trades or executes orders.</p>
 </main>
 
 <script src="app.js"></script>
+<script src="tts.js" defer></script>
 </body>
 </html>
