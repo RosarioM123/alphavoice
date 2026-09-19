@@ -1,0 +1,1 @@
+"""AlphaVoice MCP server package."""

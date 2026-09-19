@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlphaVoice: Quant Research for Alexa+</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="sim-badge" role="note">SIMULATED EXPERIENCE</div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-dot" aria-hidden="true"></span>
+    <div>
+      <h1>AlphaVoice</h1>
+      <p class="tagline">Quant research for Alexa+, simulated in the browser</p>
+    </div>
+  </div>
+  <div id="connPill" class="conn checking" role="status">
+    <span class="dot" aria-hidden="true"></span><span id="connText">MCP server: checking</span>
+  </div>
+</header>
+
+<div id="serverBanner" class="banner hidden" role="alert">
+  <div class="banner-text">
+    <strong>MCP server not reachable.</strong>
+    <p>Start the MCP server: from <code>~/workspace/alphavoice</code> run <code>python -m server.main</code>, which serves Streamable HTTP at <code>http://localhost:8000/mcp</code>. Then click Retry.</p>
+  </div>
+  <button id="retryBtn" type="button">Retry</button>
+</div>
+
+<main class="stage">
+  <div id="ring" class="ring idle" aria-hidden="true"><div class="ring-core"></div></div>
+  <p id="stateLine" class="state-line">Ask me about the markets.</p>
+
+  <section id="transcript" class="transcript" aria-live="polite" aria-label="Conversation transcript"></section>
+
+  <div class="chips" role="group" aria-label="Suggested demo questions">
+    <button class="chip" type="button" data-q="How fast did the market absorb this morning's CPI print?">How fast did the market absorb this morning's CPI print?</button>
+    <button class="chip" type="button" data-q="Anything mispriced between Polymarket and Kalshi right now?">Anything mispriced between Polymarket and Kalshi right now?</button>
+    <button class="chip" type="button" data-q="Any unusual momentum or mean-reversion signals today?">Any unusual momentum or mean-reversion signals today?</button>
+  </div>
+
+  <form id="askForm" class="askbar" autocomplete="off">
+    <label class="visually-hidden" for="askInput">Ask Alexa</label>
+    <input id="askInput" type="text" placeholder="Ask Alexa..." maxlength="280" aria-label="Ask Alexa">
+    <button id="askBtn" type="submit" aria-label="Ask">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="3" width="6" height="11" rx="3"></rect>
+        <path d="M5 11a7 7 0 0 0 14 0"></path>
+        <line x1="12" y1="18" x2="12" y2="21"></line>
+      </svg>
+    </button>
+  </form>
+
+  <p class="footnote">Agent routing is simulated (keyword match) and labeled as such. Tool calls are real, over MCP Streamable HTTP at localhost:8000. Mispricing output is paper only: nothing here places trades or executes orders.</p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
