@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from mcp.server.mcpserver import MCPServer  # noqa: E402
 
+from compose import composed_brief  # noqa: E402
 from tools.mispricing_check import mispricing_check  # noqa: E402
 from tools.news_microstructure import news_microstructure  # noqa: E402
 from tools.signal_scan import signal_scan  # noqa: E402
@@ -57,6 +58,18 @@ def _mispricing_check(query: str, size: float = 100.0, bankroll: float = 100.0, 
 )
 def _news_microstructure(query: str, window_minutes: int = 390) -> dict:
     return news_microstructure(query, window_minutes=window_minutes)
+
+
+@mcp.tool(
+    name="market_brief",
+    description=(
+        "Composed morning brief: runs news_microstructure, mispricing_check, "
+        "and signal_scan on the synthetic fixtures and synthesizes one spoken "
+        "verdict. The multi-tool demo path. Simulated data, paper only, never executes."
+    ),
+)
+def _market_brief(query: str) -> dict:
+    return composed_brief(query)
 
 
 def main() -> None:
