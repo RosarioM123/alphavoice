@@ -2,25 +2,21 @@
 
 Read this aloud while recording. Speak naturally, not rushed. Timing cues are approximate.
 
-**0:00 to 0:15: the hook**
+**0:00 to 0:20: the hook**
 
-"AlphaVoice is a translation layer between quant models and human conversation. It is a self-hosted MCP server that turns an Alexa+ agent into a quant research desk. Watch: I ask a market question out loud, and the agent picks the right quant tool and answers it."
+"AlphaVoice is a translation layer between quant models and human conversation. It is a self-hosted MCP server that turns an Alexa+ agent into a quant research desk. The centerpiece is the composed path: one spoken question, three quant engines, one spoken brief. Watch."
 
-**0:15 to 0:40: beat one, the CPI print**
+**0:20 to 0:45: the centerpiece, the composed morning brief**
 
-Ask: "Alexa, how fast did the market absorb this morning's CPI print?"
+Ask: "Alexa, morning brief roundup: this morning's CPI print, anything mispriced, and today's signals."
 
-The agent selects the news_microstructure tool. The spoken answer you hear should be in this shape, half-life first, then plain-English impact, then verdict, then the offer:
+The agent selects the market_brief tool, which runs news_microstructure, mispricing_check, and signal_scan in-process on the synthetic fixtures and synthesizes one spoken verdict. The answer you hear is in this exact shape, the real output, spoken aloud:
 
-"This morning's CPI print was absorbed with a half-life of about eleven minutes. In plain English: half the price impact landed within eleven minutes of the release. The Hawkes fit shows the regime is sub-critical, so the news did not cascade. Confidence is moderate, data is one hour fresh. Want the full impact curve?"
+"News is absorbed with a half-life of about 30 seconds; mispricing leaves a net edge of about 0.05 per contract, though the Kelly sizer recommends no position, paper only; and the signal scan ranks MSFT first, with about 1.6 percent expected return over 5 days. Say which lens to unpack: news absorption, mispricing, or the signal ranking."
 
-**0:40 to 0:55: optional beat two, mispricing (record this beat, keep it only if time allows)**
+**0:45 to 0:55: the honesty beat**
 
-Ask: "Alexa, any mispricing on the election markets right now?"
-
-The agent selects mispricing_check. The spoken answer should be in this shape:
-
-"Full-book VWAP shows Kalshi pricing the contract two cents rich to Polymarket. Fractional Kelly suggests a small paper position. This is paper only, nothing executes. Want the exact size?"
+"Every number you heard is synthetic and labeled simulated. The mispricing leg is paper only, nothing executes, no order path exists. The point is the composition pattern: single-purpose MCP tools as building blocks, one composed voice on top."
 
 **0:55 to 1:00: the close**
 
