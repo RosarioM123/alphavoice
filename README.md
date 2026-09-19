@@ -74,6 +74,8 @@ alphavoice/
   LICENSE              license choice (see top-of-file note)
   docs/
     architecture.svg   system diagram: voice to spoken answer
+    adr/               architecture decision records for the five design decisions
+    alexa-integration.md production path from the web sim to a real Alexa+ agent
     demo-script.md       60-second demo script
     friction-log.md      builder friction log (template)
     product-feedback.md  DRAFT feedback on the MCP SDK
