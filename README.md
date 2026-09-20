@@ -77,6 +77,8 @@ alphavoice/
     adr/               architecture decision records for the five design decisions
     alexa-integration.md production path from the web sim to a real Alexa+ agent
     demo-script.md       60-second demo script
+    performance.md       measured per-tool latencies on the synthetic fixtures
+    security.md          paper-only guarantee, input validation, threat model
     speech-examples.md   before/after pairs: raw quant output vs spoken summary
     sample-utterances.md "try saying..." list mapped to the demo chips
     friction-log.md      builder friction log (template)
