@@ -89,6 +89,9 @@ alphavoice/
   web/                 browser simulation of the voice experience
 ```
 
+The changelog and contributor guide live at the repo root:
+[CHANGELOG.md](CHANGELOG.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## What is new in the hackathon window
 
 The quant engines pre-date this project: the signal families, the ridge combiner, the mispricing math, and the Hawkes fitting already existed. Built during the hackathon window: the MCP server itself, the four tool schemas (including the composed market_brief path), the voice interaction design, the summary/detail contract, the speech rules, the routing eval harness, and the demo. The code in `server/`, the tests in `tests/`, the evals in `evals/`, and the simulation in `web/` are the evidence.
