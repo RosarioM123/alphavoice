@@ -1,3 +1,5 @@
+> **Status: paused.** Active work is on [world-workstate-infrastructure](https://github.com/RosarioM123/world-workstate-infrastructure). This repo resumes after the WORLD handoff experiment is validated.
+
 # AlphaVoice
 
 [![CI](https://github.com/RosarioM123/alphavoice/actions/workflows/ci.yml/badge.svg)](https://github.com/RosarioM123/alphavoice/actions/workflows/ci.yml)
